@@ -1,29 +1,222 @@
-h1 {
-    font-size: 80px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-weight: 700;
-    text-align: center;
-    margin-block: 53.6px;
+/*! ===========> Global Classes <=========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
-p{
-    font-size: 35px;
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: 400;
-    text-align: center;
-    margin-block: 35px;
+body {
+    background-color: #F7ECDE;
 }
 
-button {
-    width: 250px;
-    height: 80px;
-    padding: 1px 6px;
-    background-color: blue;
-    color: white;
-    display: block;
-    margin-inline: auto;
-    cursor: pointer;
-    &:hover {
-        background-color: green;
+h1, h2, label, input, th, td, p, li {
+    &::selection {
+        background-color: #fec260;
     }
+}
+main {
+    min-height: 100vh;
+    .container {
+        h1 {
+            color: #352E28;
+            font-family: Pacifico;
+            font-size: 50px;
+            line-height: 60px;
+            position: relative;
+            width: fit-content;
+            &::before {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 25%;
+                left: 0;
+                bottom: 10px;
+                background-color: #fec260;
+                transition: height 350ms;
+                z-index: -1;
+            }
+            &:hover::before {
+                height: 50%;
+            }
+        }
+        .bookmark-section {
+            border-top: 2px #352e28 dotted;
+            border-bottom: 2px #352e28 dotted;
+            h2 {
+                font-family: Righteous;
+                font-size: 25px;
+                line-height: 30px;
+                margin-bottom: 8px;
+                color: transparent;
+                background-image: linear-gradient(to right, #3ca55c, #b5ac49);
+                background-clip: text;
+            }
+            .site-name , .site-url {
+                label {
+                    color: #212529;
+                    font-family: PTSansCaption-Bold;
+                    font-size: 16px;
+                    line-height: 24px;
+                }
+                input {
+                    &::placeholder{
+                        font-family: PTSansCaption-Regular;
+                        font-size: 16px;
+                        line-height: 24px;
+                        font-weight: 400;
+                    }
+                    &:focus {
+                        border-color: #d99c39;
+                        outline: 0;
+                        box-shadow: 0 0 0 0.25rem #fec26055;
+                    }
+                }
+            }
+            .submit-button {
+                padding: 6px 48px;
+                font-family: PTSansCaption-Regular;
+                color: #fff;
+                background-color: #d1512d;
+                width: fit-content;
+                &:hover {
+                    background-color: #bb4120;
+                    border-color: #a03315;
+                }
+            }
+        }
+        table {
+            --bs-body-bg: #F8F9FA;
+            th, td {
+                color: #212529;
+                font-family: PTSansCaption-Regular;
+                font-size: 16px;
+                line-height: 24px;
+                padding: 8px;
+            }
+            thead {
+                tr {
+                    th {
+                        font-weight: 700;
+                    }
+                }
+            }
+            .table-body {
+                tr {
+                    td {
+                        font-weight: 400;
+                        button {
+                            padding: 6px 12px;
+                            color: white;
+                        }
+                        .visit-button {
+                            background-color: #9eb23b;
+                            &:hover {
+                                background-color: #8a9e23;
+                                border-color: #6e8018;
+                            }
+                        }
+                        .delete-button {
+                            background-color: #eb1d36;
+                            &:hover {
+                                background-color: #d30820;
+                                border-color: #ba081d;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    .alert-section {
+        background-color: #0007;
+        .alert-content {
+            width: 500px;
+            z-index: 111;
+            header {
+                .three-circles {
+                    span {
+                        width: 20px;
+                        height: 20px;
+                        &:nth-child(1) {
+                            background-color: #f15f5d;
+                        }
+                        &:nth-child(2) {
+                            background-color: #febe2e;
+                        }
+                        &:nth-child(3) {
+                            background-color: #4db748;
+                        }
+                    }
+                }
+            }
+            p {
+                font-family: BreeSerif;
+                font-size: 21px;
+                line-height: 27.3px;
+                color: #352E28;
+            }
+            ol {
+                li {
+                    color: #212529;
+                    font-family: PTSansCaption-Regular;
+                    font-size: 18px;
+                    line-height: 27px;
+                    padding-top: 10px;
+                    i {
+                        color: #bb4120;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*! ===========> Fonts <=========== */
+/*& ===========> Righteous <=========== */
+@font-face {
+    font-family: Righteous;
+    src: url(../webfonts/Righteous-Regular.ttf) format('ttf'),
+         url(../webfonts/Righteous-Regular.woff2) format('woff2');
+}
+/*& ===========> Pacifico <=========== */
+@font-face {
+    font-family: Pacifico;
+    src: url(../webfonts/Pacifico-Regular.ttf) format('ttf'),
+         url(../webfonts/Pacifico-Regular.woff2) format('woff2');
+}
+/*& ===========> PTSansCaption-Regular <=========== */
+@font-face {
+    font-family: PTSansCaption-Regular;
+    src: url(../webfonts/PTSansCaption-Regular.ttf) format('ttf'),
+         url(../webfonts/PTSansCaption-Regular.woff2) format('woff2');
+}
+/*& ===========> PTSansCaption-Bold <=========== */
+@font-face {
+    font-family: PTSansCaption-Bold;
+    src: url(../webfonts/PTSansCaption-Bold.ttf) format('ttf'),
+         url(../webfonts/PTSansCaption-Bold.woff2) format('woff2');
+}
+/*& ===========> BreeSerif <=========== */
+@font-face {
+    font-family: BreeSerif;
+    src: url(../webfonts/BreeSerif-Regular.ttf) format('ttf'),
+         url(../webfonts/BreeSerif-Regular.woff2) format('woff2');
 }

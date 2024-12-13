@@ -3,19 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assignment-2-JS</title>
-    <link rel="stylesheet" href="CSS/style.css">
+    <title>Bookmark</title>
+
+    <!--* ===========> Website Icon <=========== -->
+    <link type="image/png" rel="icon" href="./Images/bookmark-icon.png" />
+
+    <!--* ===========> Font Awesome Icons <=========== -->
+    <link rel="stylesheet" href="./CSS/all.min.css" />
+
+    <!--* ===========> Bootstrap <=========== -->
+    <link rel="stylesheet" href="./CSS/bootstrap.min.css" />
+
+    <!--* ===========> CSS Style Sheet <=========== -->
+    <link rel="stylesheet" href="./CSS/style.css" />
 </head>
 <body>
-    
-    <h1>Quote of the Day</h1>
 
-    <p>Press the button below to recieve a random quote!</p>
+    <main class="py-5 position-relative">
+        <section class="container d-flex flex-column justify-content-center align-items-center">
+            <h1 class="py-2 mb-2">Bookmarker</h1>
+            <div class="bookmark-section w-100 p-3 py-4 mt-5 d-flex flex-column gap-4">
+                <h2 class="text-center">
+                    <i class="fa-solid fa-bookmark"></i>
+                    Bookmark your favorite sites
+                    <i class="fa-solid fa-bookmark"></i>
+                </h2>
+                <div class="site-name">
+                    <label for="bookmark-name" class="d-block pb-2 fw-semibold text-start"><i class="fa-solid fa-book-bookmark pe-2"></i> Site Name</label>
+                    <input oninput="validateInputs(this)" type="text" name="bookmark-name" id="bookmarkName" placeholder="Bookmark Name" class="form-control">
+                </div>
+                <div class="site-url">
+                    <label for="bookmark-url" class="d-block pb-2 fw-semibold text-start"><i class="fa-solid fa-link pe-2"></i>Site URL</label>
+                    <input oninput="validateInputs(this)" type="text" name="bookmark-url" id="bookmarkUrl" placeholder="Website URL" class="form-control">
+                </div>
+                <button class="btn m-auto submit-button">Submit</button>
+            </div>
+            <table class="table mt-4 text-center align-middle">
+                <thead class="fw-light">
+                    <tr>
+                        <th class="text-capitalize">index</th>
+                        <th class="text-capitalize">website name</th>
+                        <th class="text-capitalize">visit</th>
+                        <th class="text-capitalize">delete</th>
+                    </tr>
+                </thead>
+                <tbody class="table-body">
+                </tbody>
+            </table>
+        </section>
+        <section class="alert-section position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center d-none">
+            <div class="alert-content bg-white p-4 rounded-2 shadow-lg">
+                <header class="w-100 mb-4 d-flex justify-content-between align-items-center">
+                    <div class="three-circles d-flex">
+                        <span class="d-block rounded-circle me-2"></span>
+                        <span class="d-block rounded-circle me-2"></span>
+                        <span class="d-block rounded-circle me-2"></span>
+                    </div>
+                    <button class="btn border-0 close-button"><i class="fa-solid fa-xmark fs-3"></i></button>
+                </header>
+                <p class="m-0 pb-2">Site Name or Url is not valid, Please follow the rules below :</p>
+                <ol class="list-unstyled m-0">
+                    <li><i class="fa-regular fa-circle-right p-2"></i>Site name must contain at least 3 characters</li>
+                    <li><i class="fa-regular fa-circle-right p-2"></i>Site URL must be a valid one</li>
+                </ol>
+            </div>
+        </section>
+    </main>
 
-    <button onclick="display_quote()">New Quote</button>
+    <!--* ===========> Bootstrap <=========== -->
+    <script src="./JS/bootstrap.bundle.min.js"></script>
 
-    <div id="quotes"></div>
-
+    <!--* ===========> JS file <=========== -->
     <script src="./JS/main.js"></script>
     
 </body>
